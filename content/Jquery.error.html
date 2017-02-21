@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery.load</title>
+</head>
+
+<body>
+<p>The ajaxStop() method specifies a function to run when ALL AJAX requests have completed.<br>$(document).ajaxStop(function())</p>
+
+<p>The ajaxError() method specifies a function to be run when an AJAX request fails.</p>
+<p>$(document).ajaxError(function(event,xhr,options,exc))</p>
+<p><ul><li><em>event</em> - contains the event object</li>
+    <li><em>xhr</em> - contains the XMLHttpRequest object</li>
+    <li><em>options</em> - contains the options used in the AJAX request</li>
+    <li><em>exc</em> - contains the JavaScript exception, if one occurred</li></ul>
+</p>
+<p>
+The ajaxSuccess() method specifies a function to be run when an AJAX request is successfully completed.<br>
+$(document).ajaxSuccess(function(){
+    alert("AJAX request successfully completed");
+});
+</p>
+<p>Example</p>
+<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;JQuery Ajax demo1&lt;/title&gt;
+&lt;style&gt;
+#content{color:#610B38;}
+&lt;/style&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div id="content"&gt;
+	
+&lt;/div&gt;
+
+&lt;script&gt;
+window.onload=function(){
+ $("#content").load("https://www.w3schools.com/jquery/demo_ajax_gethint.asp");
+}
+$(document).ajaxSend(function(e, xhr, opt){
+    $("div").append("<p>Requesting: " + opt.url + "</p>");
+});
+$(document).ajaxError(function(){
+    alert("An error occurred!");
+});
+$(document).ajaxSuccess(function(){
+    alert("AJAX request successfully completed");
+});
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</body>
+</html>

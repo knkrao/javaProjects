@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery.get</title>
+</head>
+
+<body>
+<div class="w3-row w3-white">
+    <div class="w3-col l10 m12" id="main">
+      <!-- Ezoic - Leaderboard - top_of_page -->
+      <div id="ezoic-pub-ad-placeholder-103">
+        <div id="mainLeaderboard" style="overflow:hidden;">
+          <!-- MainLeaderboard-->
+          <div id="div-gpt-ad-1422003450156-2">
+          </div>
+        </div>
+      </div>
+      <!-- End Ezoic - Leaderboard - top_of_page -->
+<h1>HTTP <span class="color_h1">Methods: GET vs. POST</span></h1>
+<hr>
+<p class="intro">The two most used HTTP methods are: GET and POST.</p>
+<hr>
+
+<h2>What is HTTP?</h2>
+<p>The Hypertext Transfer Protocol (HTTP) is designed to enable 
+communications between clients and servers.</p>
+<p>HTTP works as a request-response protocol between a client and server.</p>
+<p>A web browser may be the client, and an application on a 
+computer that hosts a web site may be the server.</p>
+<p>Example: A client (browser) submits an HTTP request to the server; then the server 
+returns a response to the client. The response contains status information about 
+the request and may also contain the requested content.</p>
+<hr>
+
+<h2>Two HTTP Request Methods: GET and POST</h2>
+<p>Two commonly used methods for a request-response between a client and server 
+are: GET and 
+POST.</p>
+<ul>
+  <li><b>GET</b> - Requests data from a specified resource</li>
+  <li><b>POST</b> - Submits data to be processed to a specified resource</li>
+</ul>
+<hr>
+
+<h2>The GET Method</h2>
+<p><b>Note that the query string (name/value pairs) is sent in the URL of 
+a GET request:</b></p>
+
+
+<p><b>Some other notes on GET requests:</b></p>
+<ul>
+  <li>GET requests can be cached</li>
+  <li>GET requests remain in the browser history</li>
+  <li>GET requests can be bookmarked</li>
+  <li>GET requests should never be used when dealing with sensitive data</li>
+  <li>GET requests have length restrictions</li>
+  <li>GET requests should be used only to retrieve data</li>
+</ul>
+<hr>
+
+<h2>The POST Method</h2>
+<p><b>Note that the query string (name/value pairs) is sent in the HTTP message body of a POST request:</b></p>
+<p><b>Some other notes on POST requests:</b></p>
+<ul>
+  <li>POST requests are never cached</li>
+  <li>POST requests do not remain in the browser history</li>
+  <li>POST requests cannot be bookmarked</li>
+  <li>POST requests have no restrictions on data length</li>
+</ul>
+<hr>
+
+<h2>Compare GET vs. POST</h2>
+<p>The following table compares the two HTTP methods: GET and POST.</p>
+<div class="w3-responsive">
+<table class="w3-table-all notranslate">
+  <tbody><tr>
+    <th style="width:30%">&nbsp;</th>
+    <th style="width:35%">GET</th>
+    <th>POST</th>
+  </tr>
+  <tr>
+    <td>BACK button/Reload</td>
+    <td>Harmless</td>
+    <td>Data will be re-submitted (the browser should alert the user that the data are about to be re-submitted)</td>
+  </tr>
+  <tr>
+    <td>Bookmarked</td>
+    <td>Can be bookmarked</td>
+    <td>Cannot be bookmarked</td>
+  </tr>
+  <tr>
+    <td>Cached</td>
+    <td>Can be cached</td>
+    <td>Not cached</td>
+  </tr>
+  <tr>
+    <td>Encoding type</td>
+    <td>application/x-www-form-urlencoded</td>
+    <td>application/x-www-form-urlencoded or multipart/form-data. Use multipart encoding for binary data</td>
+  </tr>
+  <tr>
+    <td>History</td>
+    <td>Parameters remain in browser history</td>
+    <td>Parameters are not saved in browser history</td>
+  </tr>
+  <tr>
+    <td>Restrictions on data length</td>
+    <td>Yes, when sending data, the GET method adds the data to the URL; and the length of a URL is limited (maximum URL length is 2048 characters)</td>
+    <td>No restrictions</td>
+  </tr>
+  <tr>
+    <td>Restrictions on data type</td>
+    <td>Only ASCII characters allowed</td>
+    <td>No restrictions. Binary data is also allowed</td>
+  </tr>
+  <tr>
+    <td>Security</td>
+    <td>GET is less secure compared to POST because data sent is part of the URL<br>
+ <br>
+ Never use GET when sending passwords or other sensitive information!</td>
+    <td>POST is a little safer than GET because the parameters are not stored in browser history or in web server logs</td>
+  </tr>
+  <tr>
+    <td>Visibility</td>
+    <td>Data is visible to everyone in the URL</td>
+    <td>Data is not displayed in the URL</td>
+  </tr>
+  </tbody></table>
+</div></div></div>
+<hr>
+
+</body>
+</html>

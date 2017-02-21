@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery.load</title>
+</head>
+
+<body>
+<p>The param() method creates a serialized representation of an array or an object.<br>$.param(object,trad)</p>
+<p>The serialize() method creates a URL encoded text string by serializing form values.<br>
+You can select one or more form elements (like input and/or text area), or the form element itself.<br>The serialized values can be used in the URL query string when making an AJAX request.</p>
+<p>$(selector).serialize()</p>
+
+<p>Example</p>
+<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;JQuery Ajax demo1&lt;/title&gt;
+&lt;style&gt;
+#content{color:#610B38;}
+&lt;/style&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div id="content"&gt;
+	
+&lt;/div&gt;
+
+&lt;script&gt;
+$(document).ready(function(){
+    personObj = new Object();
+    personObj.firstname = "John";
+    personObj.lastname = "Doe";
+    personObj.age = 50;
+    personObj.eyecolor = "blue"; 
+    $("button").click(function(){
+        var text=$.param(personObj);
+    });
+});
+$("button").click(function(){
+    $("div").text($("form").serialize());
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</body>
+</html>

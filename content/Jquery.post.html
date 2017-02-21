@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery.get</title>
+</head>
+
+<body>
+<p></p>
+<p></p>
+<p>The $.post() method loads data from the server using a HTTP POST request.</p>
+<p>$.get(URL,data,function(data,status,xhr),dataType)</p>
+<p>Data: optional string sent to server with request.</p>
+<p>function(data,status,xhr)	Optional. Specifies a function to run if the request succeeds<br>
+Additional parameters:<br>	
+data - contains the resulting data from the request<br>
+status - contains the status of the request ("success", "notmodified", "error", "timeout", or "parsererror")<br>
+xhr - contains the XMLHttpRequest object</p>
+<p>Example</p>
+<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;JQuery Ajax demo1&lt;/title&gt;
+&lt;style&gt;
+#content{color:#610B38;}
+&lt;/style&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div id="content"&gt;
+	
+&lt;/div&gt;
+
+&lt;script&gt;
+window.onload=function(){
+ $("input").keyup(function(){
+        var txt = $("input").val();
+          /* $.post("https://www.w3schools.com/jquery/demo_ajax_gethint.asp", {suggest: txt}, function(result){
+            $("#span").html(result);
+        });*/
+        $.post("demo_ajax_gethint.asp", {suggest: txt}, function(result){
+            $("span").html(result);
+        });
+    });
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</body>
+</html>
