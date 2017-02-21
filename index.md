@@ -1,37 +1,108 @@
-## Welcome to GitHub Pages
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery Ajax demo1</title>
+<style>
+body{    background-color: #f5f5f4;}
+#hold{padding:20px;}
+#content{color:#AF0000;}
+.titlecontent {
+    background-color: #e3e5d6;
+    margin: 5px;
+    padding: 5px 10px 2px 8px;
+    width: 165px;
+    border-radius: 2px;
+	color: green;
+	text-align:center;
+	font-size:15px;
+	float:left;
+}
+.postExample{display:none;}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-You can use the [editor on GitHub](https://github.com/knkr-mpp4865/Jquery/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<body>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<div id="hold">
+<img src="./images/ajax.png" alt="logo" />
+<div class="row">
+<div class="col-md-12">
+<div class="titlecontent" value="Jquery.load">load()</div>
+<div class="titlecontent" value="Jquery.getvspost">get() vs post()</div>
+<div class="titlecontent" value="Jquery.get">get()</div>
+<div class="titlecontent" value="Jquery.post">post()</div>
+<div class="titlecontent" value="Jquery.start_complete">ajaxStart() / ajaxComplete()</div>
+<div class="titlecontent" value="Jquery.error">methods of Ajax</div>
+<div class="titlecontent" value="Jquery.param">param() serialize()</div>
+</div>
+</div>
+<div class="row postExample">
+<div class="col-md-12">
+	First name:
+<input type="text" id="input">
 
-### Markdown
+<p>Suggestions: <span id="span"></span></p>
+<script>
+$(document).ready(function(){
+    $("#input").keyup(function(){
+        var txt = $("input").val();
+       /* $.post("https://www.w3schools.com/jquery/demo_ajax_gethint.asp", {suggest: txt}, function(result){
+            $("#span").html(result);
+        });*/
+    });
+});
+</script>
+</div>
+</div>
+<div class="row">
+<div id="content" class="col-md-12">
+	
+</div>
+</div>
+</div>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+<script>
+window.onload=function(){
+ $(document).ajaxError(function(){
+        alert("An error occured!");
+    });
+	
+ $(".titlecontent").bind("click touchend",function(){
+	 $(".postExample").css("display","none");
+	 	var temp=$(this).attr("value");
+		if(temp=="Jquery.load" || temp=="Jquery.start_complete" || temp=="Jquery.error" || temp=="Jquery.param")
+		 $("#content").load("./content/"+temp+".html");
+		 	if(temp=="Jquery.error")
+				 $("#content").load("https://www.w3schools.com/jquery/demo_ajax_gethint.asp1");
+		 if(temp=="Jquery.get")
+		 {
+			$.get("./content/"+temp+".html", function(data, status){
+			$("#content").html(data);
+			});
+		 }
+		if(temp=="Jquery.getvspost")
+		 {
+			 
+			$.get("./content/"+temp+".html", function(data, status){
+			$("#content").html(data);
+			});
+		 }
+		 if(temp=="Jquery.post")
+		 {
+			 $(".postExample").css("display","block");
+			$.get("./content/"+temp+".html", function(data, status){
+			$("#content").html(data);
+			});
+		 }
+		
+	 });
+} 
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/knkr-mpp4865/Jquery/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</script>
+</body>
+</html>
