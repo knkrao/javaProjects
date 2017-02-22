@@ -4,19 +4,29 @@
 <meta charset="utf-8">
 <title>JQuery Ajax demo1</title>
 <style>
-body{    background-color: #f5f5f4;}
+body{    background-color: #f5f5f4;font-family:arial !important;font-size: 14px !important; line-height:16px;}
 #hold{padding:20px;}
-#content{color:#AF0000;}
+#content{color:#AF0000;border: 1px solid #ffc0cb;border-radius: 2px;background: linear-gradient(#FAFAE5,white);margin-top:10px;}
 .titlecontent {
     background-color: #e3e5d6;
     margin: 5px;
     padding: 5px 10px 2px 8px;
-    width: 165px;
     border-radius: 2px;
 	color: green;
 	text-align:center;
 	font-size:15px;
-	float:left;
+	cursor:pointer;
+	
+}
+.titleHeader {
+    background-color: #777;
+    margin: 5px;
+    padding: 5px 10px 2px 8px;
+    border-radius: 2px;
+	color: #e3e5d6;
+	text-align:center;
+	font-size:15px;
+	
 }
 .postExample{opacity:0;}
 </style>
@@ -28,9 +38,10 @@ body{    background-color: #f5f5f4;}
 <body>
 
 <div id="hold">
-<img src="./images/ajax.png" alt="logo" />
+<div><img src="./images/ajax.png" alt="logo" class="img-responsive" style="margin-bottom:20px;"/></div>
 <div class="row">
 <div class="col-md-2">
+<div class="titleHeader">Ajax methods in Jquery</div>
 <div class="titlecontent" value="Jquery.load">load()</div>
 <div class="titlecontent" value="Jquery.getvspost">get() vs post()</div>
 <div class="titlecontent" value="Jquery.get">get()</div>
@@ -40,7 +51,21 @@ body{    background-color: #f5f5f4;}
 <div class="titlecontent" value="Jquery.param">param() serialize()</div>
 </div>
 
+<div id="content" class="col-md-8 col-md-offset-1">
+<p>AJAX = Asynchronous JavaScript and XML.</p>
 
+<p>In short; AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.</p>
+
+<p>Examples of applications using AJAX: Gmail, Google Maps, Youtube, and Facebook tabs.</p>
+
+<p>You can learn more about AJAX in our AJAX tutorial.</p>
+<p>jQuery provides several methods for AJAX functionality.<br>
+
+With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of your web page!</p>
+</div>
+
+
+</div>
 <div class="postExample">
 	First name:
 <input type="text" id="input">
@@ -56,13 +81,6 @@ $(document).ready(function(){
     });
 });
 </script>
-</div>
-
-
-<div id="content" class="col-md-8 col-md-offset-2">
-	
-</div>
-
 </div>
 
 </div>
